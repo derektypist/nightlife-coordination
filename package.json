@@ -2,7 +2,7 @@
   "name": "nightlife-coordination",
   "version": "1.0.0",
   "description": "The purpose of the project is to provide the Nightlife Coordination.",
-  "main": "server.js",
+  "main": "node server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
