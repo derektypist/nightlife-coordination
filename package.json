@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/derektypist/nightlife-coordination#readme",
   "dependencies": {
-    "mongodb": "^4.1.4"
+    "mongodb": "^4.1.4",
+    "mongoose": "^6.0.13"
   }
 }
