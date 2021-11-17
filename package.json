@@ -1,0 +1,24 @@
+{
+  "name": "nightlife-coordination",
+  "version": "1.0.0",
+  "description": "The purpose of the project is to provide the Nightlife Coordination.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/derektypist/nightlife-coordination.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/derektypist/nightlife-coordination/issues"
+  },
+  "homepage": "https://github.com/derektypist/nightlife-coordination#readme",
+  "dependencies": {
+    "mongodb": "^4.1.4"
+  }
+}
