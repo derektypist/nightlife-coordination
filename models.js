@@ -29,3 +29,20 @@ UserSchema.methods.genHash = function(password) {
 UserSchema.methods.validPassword = function(password) {
   return bcrypt.compareSync(password, this.local.password);
 };
+
+// Place Schema
+const PlaceSchema = new Schema({
+  name: String,
+  zip_code: String,
+  reservedList: [String],
+  numgoing: {
+    type: Number,
+    default: 0
+  }
+});
+
+const Place = mongoose.model('place',PlaceSchema);
+
+// Export Modules
+module.exports.User = User;
+module.exports.Place = Place;
