@@ -14,6 +14,10 @@ As an unauthenticated user, when you login you should not have to search again.
 
 Try using the [Yelp API](https://www.yelp.com/developers/documentation/v3) to find venues in the cities that your users search for.
 
+**Information Architecture**
+
+User consists of local - username and password (both strings) and facebook - id, token, email and name (all strings).
+
 ## Technologies
 
 Uses the technologies of express.js, MongoDB, Mongoose
