@@ -15,3 +15,17 @@ const UserSchema = new Schema({
     name: String
   }
 });
+
+const User = mongoose.model('user', UserSchema);
+
+// Apply hashing password
+let saltRounds = 10;
+let salt = bcrypt.genSaltSync(saltRounds);
+UserSchema.methods.genHash = function(password) {
+  return bcrypt.hashSync(password, salt);
+};
+
+// Compare input password with database password
+UserSchema.methods.validPassword = function(password) {
+  return bcrypt.compareSync(password, this.local.password);
+};
