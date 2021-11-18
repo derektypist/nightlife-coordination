@@ -16,13 +16,13 @@ Try using the [Yelp API](https://www.yelp.com/developers/documentation/v3) to fi
 
 **Information Architecture**
 
-User consists of local - username and password (both strings) and facebook - id, token, email and name (all strings).
+User consists of local and facebook, which are objects.  The object local consists of username and password (both strings). The object facebook consists of id, token, email and name (all strings).
 
 Place consists of name, zip_code, reservedList and numgoing.  All are strings except numgoing, which is a number.  In addition, reservedList is an array and numgoing is currently at 0.
 
 ## Technologies
 
-Uses the technologies of express.js, MongoDB, Mongoose
+Uses the technologies of express.js, MongoDB, Mongoose and bcrypt.
 
 ## Credits
 
