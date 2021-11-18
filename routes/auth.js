@@ -29,3 +29,11 @@ router.post('/login', passport.authenticate('local-login', {
   failureRedirect: '/auth/login',
   failureFlash: true
 }));
+
+// Facebook Login with Extended Permissions
+router.get('/facebook', passport.authenticate('facebook', {scope: ['user_friends', 'email', 'public_profile']}));
+
+router.get('/facebook/callback', passport.authenticate('facebook', {
+  successRedirect: '/profile',
+  failureRedirect: '/auth/login'
+}));
