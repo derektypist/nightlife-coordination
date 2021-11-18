@@ -16,3 +16,16 @@ router.post('/signup', passport.authenticate('local-signup', {
   failureFlash: true
 }));
 
+// Login
+router.get('/login', (req, res) => {
+  res.render('login', {
+    title: "Login",
+    message: req.flash('loginMessage')
+  });
+});
+
+router.post('/login', passport.authenticate('local-login', {
+  successRedirect: '/profile',
+  failureRedirect: '/auth/login',
+  failureFlash: true
+}));
