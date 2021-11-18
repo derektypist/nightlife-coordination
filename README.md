@@ -35,3 +35,4 @@ Taken from [Tri Vi](https://github.com/triminhvi), accessed from 18 November 202
 - [FreeCodeCamp](https://www.freecodecamp.org)
 - [Tri Vi - GitHub Repository](https://github.com/triminhvi/Nightlife_Coordination_App)
 - [Yelp](https://www.yelp.com)
+- [Passport](https://www.passportjs.org)
