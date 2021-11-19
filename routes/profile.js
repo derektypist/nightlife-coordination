@@ -26,6 +26,62 @@ router.get('/', isLoggedIn, function(req,res) {
   });
 });
 
+// Add Reservation
+router.post('/addreservation/:zip_code/:name', isLoggedIn, function(req,res) {
+  let userEmail = req.user.local.username || req.user.facebook.email;
+  let placeName = req.params.name;
+  let zipcode = req.params.zip_code;
+  Place.findOne({"name": placeName}, function(err, place) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+
+    if (!place) {
+      // no place for first time adding
+      let myNewPlace = new Place();
+      myNewPlace.name = placeName;
+      myNewPlace.zip_code = zipcode;
+      myNewPlace.reservedList.push(userEmail);
+      myNewPlace.numgoing++;
+
+      // Save place into place db
+      myNewPlace.save(function(err) {
+        if (err) {
+          console.log(err);
+        }
+
+        // Push user to Reserved List
+        console.log('New Place and New User Added');
+        req.flash('reserveMessage', userEmail + ' reserved');
+        res.redirect('/search/api/?search=' + zipcode);
+      });
+    }
+
+    else if (place) {
+      // Check if user has already reserved
+      if (place.reservedList.includes(userEmail)) {
+        // User already reserved
+        console.log('You already reserved');
+        req.flash('reserveMessage', 'You already reserved');
+        res.redirect('/search/api/?search=' + zipcode);
+      } else {
+        // User has not reserved
+        place.reservedList.push(userEmail);
+        place.numgoing++;
+        place.save(function(err) {
+          if (err) {
+            console.log(err);
+          }
+
+          req.flash('reserveMessage', userEmail + ' reserved');
+          res.redirect('/search/api/?search=' + zipcode);
+        });
+      }
+    }
+  });
+});
+
 // Login Function
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
