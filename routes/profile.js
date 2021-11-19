@@ -15,6 +15,17 @@ router.get('/*', isLoggedIn, function(req,res) {
   });
 });
 
+router.get('/', isLoggedIn, function(req,res) {
+  Place.find({$or: [{reservedList: req.user.local.username}, {reservedList: req.user.facebook.email}]}, function(err,places) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+
+    res.render('profile', {title: "Profile", message: req.flash("reserveMessage"), places: places});
+  });
+});
+
 // Login Function
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
