@@ -82,6 +82,48 @@ router.post('/addreservation/:zip_code/:name', isLoggedIn, function(req,res) {
   });
 });
 
+// Remove Reservation
+router.post('/removereservation/:zip_code/:name', isLoggedIn, function(req, res) {
+  let userEmail = req.user.local.username || req.user.facebook.email;
+  let placeName = req.params.name;
+  let zipcode = req.params.zip_code;
+  Place.findOne({'name': placeName}, function(err,place) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+
+    // Place is already in the reserved list
+    if (place) {
+      // Check if current user is already in the list
+      if (place.reservedList.includes(userEmail)) {
+        // User is in the reservation list
+        let index = place.reservedList.indexOf(userEmail);
+        place.reservedList.splice(index, 1);
+        place.numgoing--;
+        console.log(`User with ${userEmail} has been removed from the list`);
+        place.save(function(err) {
+          if (err) {
+            console.log(err);
+            return;
+          }
+
+          req.flash('reserveMessage', userEmail + ' has been removed from the list');
+          res.redirect('/search/api/?search=' + zipcode);
+        });
+      } else {
+        // User is not in the reservation list
+        req.flash('reserveMessage', 'You have not reserved at this place');
+        res.redirct('/search/api/?search=' + zipcode);
+      }
+    } else {
+      // Place is not added in the reserved list
+      req.flash('reserveMessage', 'You have not reserved at this place.  Select Reserve.');
+      res.redirect('/search/api/?search=' + zipcode);
+    }
+  });
+});
+
 // Login Function
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
