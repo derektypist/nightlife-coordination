@@ -70,7 +70,39 @@ module.exports = function(passport) {
     });
   }));
 
-  
+  // Facebook Strategy
+  passport.use(new FacebookStrategy({
+    clientID: configAuth.facebookAuth.clientID,
+    clientSecret: configAuth.facebookAuth.clientSecret,
+    callbackURL: configAuth.facebookAuth.callbackURL,
+    profileFields: configAuth.facebookAuth.profileFields
+  }, function(accessToken, refreshToken, profile, done) {
+    process.nextTick(function() {
+      User.findOne({'facebook.id': profile.id}, function(err, user) {
+        if (err) {
+          return done(err);
+        }
+
+        if (user) {
+          return done(null, user);
+        } else {
+          // If user is not Found
+          let theNewUser = new User();
+          theNewUser.facebook.id = profile.id;
+          theNewUser.facebook.token = accessToken;
+          theNewUser.facebook.name = profile.name.givenName + ' ' + profile.name.familyName;
+          theNewUser.facebook.email = profile.emails[0].value;
+
+          theNewUser.save(function(err) {
+            if (err) {
+              throw (err);
+            }
+            return done(null, theNewUser);
+          });
+        }
+      });
+    });
+  }));
 
   
 };
