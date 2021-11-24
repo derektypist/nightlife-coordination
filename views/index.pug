@@ -38,5 +38,17 @@ html(lang='en')
             li(class='nav-item')
               a(class='nav-link' href='/auth/login') Log In
     // Apply Jumbotron
-    
- 
+    article(class='jumbotron jumbotron-fluid vertical-center')
+      article(class='container-fluid text-center')
+        h4(class='display-4') Welcome to Nightlife & Drinking
+        p(class='lead') Where do you want to go tonight?
+        article(class='row')
+          article(class='col')
+          article(class='col-lg-6')
+            form(action='/search/api' method='get')
+              article(class='input-group')
+                input(type='text' class='form-control' placeholder='Enter zipcode (or equivalent, e.g. UK Postcode)' name='search')
+                span(class='input-group-btn')
+                  button(class='btn btn-secondary btn-danger' type='submit') Go! 
+          article(class='col')
+    // Load Scripts
