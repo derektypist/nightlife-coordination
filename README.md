@@ -4,6 +4,12 @@ The purpose of the project is to provide the Nightlife Coordination.
 
 ## UX
 
+**Getting Started**
+
+Enter the zip code (or equivalent, e.g. Postcode in the United Kingdom).  Then select Go! (use the mouse or keyboard).
+
+**User Stories**
+
 As an unauthenticated user, you can view all bars in my area.
 
 As an authenticated user, you can add myself to a bar to indicate that you are going there tonight.
@@ -20,9 +26,15 @@ User consists of local and facebook, which are objects.  The object local consis
 
 Place consists of name, zip_code, reservedList and numgoing.  All are strings except numgoing, which is a number.  In addition, reservedList is an array and numgoing is currently at 0.
 
+In the form - zip_code is text.
+
+## Features
+
+The ability to search for bars, as well as add and remove reservations.
+
 ## Technologies
 
-Uses the technologies of express.js, MongoDB, Mongoose and bcrypt.
+Uses the technologies of express.js, MongoDB, Mongoose, Bootstrap 5.1.3, Font Awesome 5.15.4 and bcrypt.
 
 ## Credits
 
