@@ -22,8 +22,7 @@ html(lang='en')
           if user
             li(class='nav-item active')
               a(class='nav-link' href='/profile/') Profile
-                span(class='sr-only') (current)
-        
+                span(class='sr-only') (current)   
         // Right Align Navs
         ul(class='nav justify-content-end')
           // If there is a user
@@ -37,20 +36,24 @@ html(lang='en')
               a(class='nav-link' href='/auth/signup') Sign Up
             li(class='nav-item')
               a(class='nav-link' href='/auth/login') Log In
-    // Apply Jumbotron
-    article(class='jumbotron jumbotron-fluid vertical-center')
-      article(class='container-fluid text-center')
-        h4(class='display-4') Welcome to Nightlife & Drinking &nbsp;
-          i(class='fas fa-cocktail')
-        p(class='lead') Where do you want to go tonight?
-        article(class='row')
-          article(class='col')
-          article(class='col-lg-6')
-            form(action='/search/api' method='get')
-              article(class='input-group')
-                input(type='text' class='form-control' placeholder='Enter zipcode (or equivalent)' title='Enter zipcode (or equivalent, e.g. UK postcode)' name='search')
-                span(class='input-group-btn')
-                  button(class='btn btn-secondary btn-danger' type='submit') Go! 
-          article(class='col')
+    // Apply Container for warning message(s)
+    article(class='container-fluid')
+      // If the message is not blank
+      if (message.length > 0)
+        article(class='alert alert-warning' role='alert')
+          strong #{message}
+    article(class='container-fluid places mt-4')
+      // If there are places
+      if (places.length > 0)
+        h2 Reservation Table
+        // Create Table
+        table(class='table')
+          thead
+            tr
+              th #
+              th(class='text-center') Reserved Place
+              th(class='text-center') Zip Code
+              th(class='text-center') Number of People Going
+              th(class='text-center') List of People Going
     // Load Scripts
     script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js')
