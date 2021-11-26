@@ -5,3 +5,21 @@
 body {
   font-family: "Roboto", Arial, Verdana, sans-serif;
 }
+
+/* Navigation */
+.nav-link:hover {
+  background-color: darkblue;
+  color: lightyellow;
+}
+
+/* Jumbotron */
+.jumbotron {
+  color: white;
+  background-color: #34568b;
+  min-height: 100vh;
+  margin-bottom: 0;
+}
+
+.jumbotron .container-fluid {
+  margin-top: 30vh;
+}
