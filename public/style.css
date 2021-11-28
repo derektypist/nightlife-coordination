@@ -23,3 +23,34 @@ body {
 .jumbotron .container-fluid {
   margin-top: 30vh;
 }
+
+/* Search Result Page */
+.sidebar-content {
+  height: 100%;
+  width: 40%;
+  position: absolute;
+  background-color: #009B77;
+  overflow: auto;
+}
+
+.sidebar-content ul {
+  border: none;
+}
+
+.sidebar-content ul li {
+  background-color: #009B77;
+  color: white;
+  border-left: 0 none !important;
+  border-right: 0 none !important;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .sidebar-content {
+    width: 100%;
+  }
+
+  nav button {
+    margin-top: 5px;
+  }
+}
