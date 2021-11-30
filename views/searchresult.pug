@@ -57,6 +57,7 @@ html(lang='en')
             - let barID = "bar" + i
             - let itemImageURL = item.image_url
             - let itemName = item.name
+            - let itemURL = item.url
             li(class='list-group-item justify-content-between' id=barID)
               article(class='row')
                 article(class='col-auto')
@@ -65,5 +66,18 @@ html(lang='en')
                     article(class='text-center' style='width: 99px; height: 99px; border: 1px solid black;') NO IMAGE AVAILABLE
                   else
                     img(src=itemImageURL alt=itemName style='width: 100px; height: 100px;')
+                article(class='col')
+                  // Provide name, rating and location
+                  h4(class='name')
+                    a(class='localUrl' href=itemURL title='View More Information for ' + itemName) #{i+1}. #{item.name}
+                  p(class='rating') Rating: &nbsp;
+                    span #{item.rating}
+                  p(class='location')
+                    span(class='address') #{item.location.address1}
+                    span(class='city') #{item.location.city}
+                    span(class='zipcode') #{item.location.state}
+                    span(class='zipcode') #{item.location.zip_code}
+                    br
+                    span(class='phoneNumber') #{item.display_phone}
     // Load Scripts
     script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js')
