@@ -50,6 +50,20 @@ html(lang='en')
             button(class='btn btn-secondary btn-danger' type='submit') Search &nbsp;
               i(class='fas fa-search')
       // If there are search results
-      
+      if (responseArr.length > 0)
+        ul(class='list-group mr-1 ml-1')
+          each item,i in responseArr
+            // Set Up Variables
+            - let barID = "bar" + i
+            - let itemImageURL = item.image_url
+            - let itemName = item.name
+            li(class='list-group-item justify-content-between' id=barID)
+              article(class='row')
+                article(class='col-auto')
+                  // If Image URL is blank
+                  if (item.image_url == "")
+                    article(class='text-center' style='width: 99px; height: 99px; border: 1px solid black;') NO IMAGE AVAILABLE
+                  else
+                    img(src=itemImageURL alt=itemName style='width: 100px; height: 100px;')
     // Load Scripts
     script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js')
