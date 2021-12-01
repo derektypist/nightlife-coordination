@@ -28,6 +28,18 @@ Place consists of name, zip_code, reservedList and numgoing.  All are strings ex
 
 In the form - zip_code is text.
 
+**Important Notes**
+
+As this project was worked on during Coronavirus:
+
+- Travel Restrictions may apply
+- Certain countries maybe in lockdown
+- Do not make any reservations if you experience COVID-19 Symptoms or if you are self-isolating
+- If a reservation has already been made and since you have made that reservation, you experience COVID-19 Symptoms or are self-isolating, remove the reservation
+- If a reservation has already been made and there is a lockdown, you may hang on to that reservation for a future date or remove the reservation
+- Check the web site for further information including their Facebook Pages, Twitter Pages, etc.
+- Place check with Government in your country, e.g. [UK Government](https://www.gov.uk)
+
 ## Features
 
 The ability to search for bars, as well as add and remove reservations.
@@ -48,3 +60,4 @@ Taken from [Tri Vi](https://github.com/triminhvi), accessed from 18 November 202
 - [Tri Vi - GitHub Repository](https://github.com/triminhvi/Nightlife_Coordination_App)
 - [Yelp](https://www.yelp.com)
 - [Passport](https://www.passportjs.org)
+- [Bootstrap](https://www.getbootstrap.com)
