@@ -61,3 +61,4 @@ Taken from [Tri Vi](https://github.com/triminhvi), accessed from 18 November 202
 - [Yelp](https://www.yelp.com)
 - [Passport](https://www.passportjs.org)
 - [Bootstrap](https://www.getbootstrap.com)
+- [Yelp Fusion](https://www.github.com/Yelp/yelp-fusion)
