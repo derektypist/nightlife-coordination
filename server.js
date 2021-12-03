@@ -44,3 +44,5 @@ db.on('open', function(err) {
 const User = require('./models').User;
 const Place = require('./models').Place;
 
+// Passport Configuration
+require('./config/passport.js')(passport);
