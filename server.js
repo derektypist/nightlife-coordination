@@ -28,3 +28,19 @@ app.use(function(req,res,next) {
   res.locals.user = req.user;
   next();
 });
+
+// DB
+let db = mongoose.connection;
+db.on('error',function(err) {
+  console.log(`Unable to connect to DB: ${db}`);
+});
+db.on('open', function(err) {
+  if (err) {
+    console.log(err);
+  }
+  console.log('Connected to DB');
+});
+
+const User = require('./models').User;
+const Place = require('./models').Place;
+
