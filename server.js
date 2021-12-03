@@ -49,3 +49,7 @@ require('./config/passport.js')(passport);
 
 // Yelp
 const client = require('./config/yelp.js');
+
+// Routes and App Start
+const auth = require('./routes/auth.js');
+app.use('/auth',auth);
