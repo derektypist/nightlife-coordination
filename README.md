@@ -46,7 +46,15 @@ The ability to search for bars, as well as add and remove reservations.
 
 ## Technologies
 
-Uses the technologies of express.js, MongoDB, Mongoose, Bootstrap 5.1.3, Font Awesome 5.15.4 and bcrypt.
+Uses the technologies of express.js, Pug, CSS3, MongoDB, Mongoose, Bootstrap 5.1.3, Font Awesome 5.15.4 and bcrypt.
+
+## Testing
+
+Make sure all the user stories have been tested.
+
+## Deployment
+
+Live on [REPL](https://nightlife-coordination.ddxps46.repl.co)
 
 ## Credits
 
