@@ -46,3 +46,6 @@ const Place = require('./models').Place;
 
 // Passport Configuration
 require('./config/passport.js')(passport);
+
+// Yelp
+const client = require('./config/yelp.js');
