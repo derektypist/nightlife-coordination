@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
+const session = require('express-session');
 const url = require('./config/db.js').url;
 mongoose.connect(url);
 const passport = require('passport');
