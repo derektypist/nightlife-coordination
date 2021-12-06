@@ -17,11 +17,6 @@ body {
   color: lightblue;
 }
 
-/* Facebook Button */
-.fb-button {
-  font-family: "Roboto", Arial, Verdana, sans-serif;
-}
-
 /* Jumbotron */
 .jumbotron {
   color: white;
@@ -64,3 +59,6 @@ body {
   color: lightpink;
 }
 
+.location {
+  color: lightyellow;
+}
