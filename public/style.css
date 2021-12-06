@@ -17,6 +17,11 @@ body {
   color: lightblue;
 }
 
+/* Facebook Button */
+.fb-button {
+  font-family: inherit;
+}
+
 /* Jumbotron */
 .jumbotron {
   color: white;
