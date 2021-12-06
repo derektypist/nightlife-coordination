@@ -30,7 +30,7 @@ body {
 }
 
 /* Search Result Page */
-.sidebar-content {
+.search-contents {
   height: 100%;
   width: 100%;
   position: absolute;
@@ -38,11 +38,11 @@ body {
   overflow: auto;
 }
 
-.sidebar-content ul {
+.search-contents ul {
   border: none;
 }
 
-.sidebar-content ul li {
+.search-contents ul li {
   background-color: #009B77;
   color: white;
   border-left: 0 none !important;
