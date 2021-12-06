@@ -16,26 +16,26 @@ html(lang='en')
         a(class='navbar-brand' href='/' style='color: yellow;') Nightlife
         button(class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle Navigation')
           span(class='navbar-toggler-icon')
-      article(class='collapse navbar-collapse' id='navbarSupportedContent')
-        // Set profile if user has logged in
-        ul(class='navbar-nav mr-auto')
-          if (user)
-            li(class='nav-item active')
-              a(class='nav-link' href='/profile/') Profile
-                span(class='sr-only') (current)   
-        // Right Align Navs
-        ul(class='nav justify-content-end')
-          // If there is a user
-          if (user)
-            li(class='nav-item')
-              a(class='nav-link' href='/profile/') #{user.local.username || user.facebook.email}
-            li(class='nav-item')
-              a(class='nav-link' href='/auth/logout') Log Out
-          else
-            li(class='nav-item')
-              a(class='nav-link' href='/auth/signup') Sign Up
-            li(class='nav-item')
-              a(class='nav-link' href='/auth/login') Log In
+        article(class='collapse navbar-collapse' id='navbarSupportedContent')
+          // Set profile if user has logged in
+          ul(class='navbar-nav mr-auto')
+            if (user)
+              li(class='nav-item active')
+                a(class='nav-link' href='/profile/') Profile
+                  span(class='sr-only') (current)   
+          // Right Align Navs
+          ul(class='nav justify-content-end')
+            // If there is a user
+            if (user)
+              li(class='nav-item')
+                a(class='nav-link' href='/profile/') #{user.local.username || user.facebook.email}
+              li(class='nav-item')
+                a(class='nav-link' href='/auth/logout') Log Out
+            else
+              li(class='nav-item')
+                a(class='nav-link' href='/auth/signup') Sign Up
+              li(class='nav-item')
+                a(class='nav-link' href='/auth/login') Log In
     // Apply Container for warning message(s)
     article(class='container-fluid')
       // If the message is not blank
@@ -44,7 +44,7 @@ html(lang='en')
           strong #{message}
       // Create Sign Up Form
       form(action='/auth/signup' method='post' id='signupForm' style='width:400px; height:350px; margin-top:10%; border:1px solid grey; border-radius:2%; padding:20px 20px 10px 20px;' class='mr-auto ml-auto')
-        h3(class='text-center')Sign Up &nbsp;
+        h3(class='text-center') Sign Up &nbsp;
           i(class='fas fa-user-plus')
         article(class='mb-3')
           label(for='email' class='form-label') Email
