@@ -41,7 +41,7 @@ html(lang='en')
     if (user && message.length > 0)
       article(class='alert alert-info container-fluid' role='alert')
         strong #{message}
-    article(class='sidebar-content')
+    article(class='search-contents')
       // Create Search Form
       form(action='/search/api' method='get' class='mb-2 mt-2 ml-1 mr-1')
         article(class='input-group')
@@ -74,8 +74,11 @@ html(lang='en')
                     span #{item.rating}
                   p(class='location')
                     span(class='address') #{item.location.address1}
+                    br
                     span(class='city') #{item.location.city}
+                    br
                     span(class='zipcode') #{item.location.state}
+                    br
                     span(class='zipcode') #{item.location.zip_code}
                     br
                     span(class='phoneNumber') #{item.display_phone}
