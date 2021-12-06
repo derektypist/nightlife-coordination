@@ -12,6 +12,11 @@ body {
   color: lightyellow;
 }
 
+.nav-link {
+  background-color: purple;
+  color: lightblue;
+}
+
 /* Jumbotron */
 .jumbotron {
   color: white;
