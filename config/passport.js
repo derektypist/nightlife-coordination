@@ -3,7 +3,6 @@ const FacebookStrategy = require('passport-facebook').Strategy;
 const User = require('../models').User;
 const configAuth = require('./auth.js');
 
-
 module.exports = function(passport) {
   // Serialize and Deserialize
   passport.serializeUser(function(user,done) {
@@ -34,7 +33,7 @@ module.exports = function(passport) {
           let theNewUser = new User();
           theNewUser.local.username = email;
           theNewUser.local.password = theNewUser.genHash(password);
-          theNewUser.save(function (err) {
+          theNewUser.save(function(err) {
             if (err) {
               throw (err);
             }
