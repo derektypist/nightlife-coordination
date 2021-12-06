@@ -16,26 +16,26 @@ html(lang='en')
         a(class='navbar-brand' href='/' style='color: yellow;') Nightlife
         button(class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle Navigation')
           span(class='navbar-toggler-icon')
-      article(class='collapse navbar-collapse' id='navbarSupportedContent')
-        // Set profile if user has logged in
-        ul(class='navbar-nav mr-auto')
-          if (user)
-            li(class='nav-item active')
-              a(class='nav-link' href='/profile/') Profile
-                span(class='sr-only') (current)   
-        // Right Align Navs
-        ul(class='nav justify-content-end')
-          // If there is a user
-          if (user)
-            li(class='nav-item')
-              a(class='nav-link' href='/profile/') #{user.local.username || user.facebook.email}
-            li(class='nav-item')
-              a(class='nav-link' href='/auth/logout') Log Out
-          else
-            li(class='nav-item')
-              a(class='nav-link' href='/auth/signup') Sign Up
-            li(class='nav-item')
-              a(class='nav-link' href='/auth/login') Log In
+        article(class='collapse navbar-collapse'    id='navbarSupportedContent')
+          // Set profile if user has logged in
+          ul(class='navbar-nav mr-auto')
+            if (user)
+              li(class='nav-item active')
+                a(class='nav-link' href='/profile/') Profile
+                  span(class='sr-only') (current)   
+          // Right Align Navs
+          ul(class='nav justify-content-end')
+            // If there is a user
+            if (user)
+              li(class='nav-item')
+                a(class='nav-link' href='/profile/') #{user.local.username || user.facebook.email}
+              li(class='nav-item')
+                a(class='nav-link' href='/auth/logout') Log Out
+            else
+              li(class='nav-item')
+                a(class='nav-link' href='/auth/signup') Sign Up
+              li(class='nav-item')
+                a(class='nav-link' href='/auth/login') Log In
     // Apply Jumbotron
     article(class='jumbotron jumbotron-fluid vertical-center')
       article(class='container-fluid text-center')
