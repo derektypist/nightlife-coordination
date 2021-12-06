@@ -59,13 +59,3 @@ body {
   color: lightpink;
 }
 
-/* Media Queries */
-@media screen and (max-width: 768px) {
-  .sidebar-content {
-    width: 100%;
-  }
-
-  nav button {
-    margin-top: 5px;
-  }
-}
