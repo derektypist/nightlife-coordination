@@ -41,7 +41,7 @@ module.exports = function(passport) {
           });
         }
       });
-    })
+    });
   }));
 
   // Login Local Strategy
