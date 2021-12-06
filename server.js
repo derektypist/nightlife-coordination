@@ -60,4 +60,23 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.get('/', function(req, res) {
+  let responseArr = [];
+  res.render('index', {title: "Home Page", responseArr: responseArr});
+});
+
+app.get('/search/api', function(req, res) {
+  let searchInput = req.query.search;
+  let yelpSearch = client.search({
+    term: "bar",
+    location: searchInput
+  }).then(function(response) {
+    let responseArr = response.jsonBody.businesses;
+    res.render('searchresult', {title: "Search Result", responseArr: responseArr, message: req.flash('reserveMessage')});
+  }).catch(function(e) {
+    console.log(e);
+    res.status(404).send('There is an error or please make sure you enter correct input requirement');
+  });
+});
+
 
