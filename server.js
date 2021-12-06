@@ -53,3 +53,11 @@ const client = require('./config/yelp.js');
 // Routes and App Start
 const auth = require('./routes/auth.js');
 app.use('/auth',auth);
+const profile = require('./routes/profile.js');
+app.use('./profile',profile);
+app.use(function(req, res, next) {
+  res.locals.user = req.user;
+  next();
+});
+
+
