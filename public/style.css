@@ -49,6 +49,16 @@ body {
   border-right: 0 none !important;
 }
 
+.localUrl {
+  text-decoration: none;
+  color: lightblue;
+}
+
+.localUrl:hover {
+  text-decoration: none;
+  color: lightpink;
+}
+
 /* Media Queries */
 @media screen and (max-width: 768px) {
   .sidebar-content {
